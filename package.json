@@ -1,0 +1,14 @@
+{
+  "name": "comm",
+  "version": "0.0.1",
+  "description": "A Node.js wrapper for Comm",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "p2p"
+  ],
+  "author": "Zac Stewart",
+  "license": "MIT"
+}
