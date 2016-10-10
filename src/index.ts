@@ -37,6 +37,7 @@ class Address {
   }
   public destroy(): void {
     libcomm.comm_address_destroy(this.pointer);
+    this.pointer = null;
   }
 
   public toString(): string {
