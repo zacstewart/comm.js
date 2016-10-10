@@ -4,8 +4,8 @@
   "description": "A Node.js wrapper for Comm",
   "main": "artifacts/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
     "build": "tsc -p .",
+    "test": "nodeunit test/*.js"
   },
   "keywords": [
     "p2p"
