@@ -1,8 +1,8 @@
 import * as ref from 'ref';
 import * as ffi from 'ffi';
 
-
 var libcomm = ffi.Library('lib/c_api/target/debug/libcomm', {
+  'comm_initialize': ['void', []],
   'comm_address_for_content': ['pointer', ['string']],
   'comm_address_from_str': ['pointer', ['string']],
   'comm_address_null': ['pointer', []],
@@ -45,4 +45,5 @@ class Address {
   }
 }
 
+libcomm.comm_initialize();
 export { libcomm, Address };
