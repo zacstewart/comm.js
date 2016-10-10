@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es6",
+    "outDir": "artifacts",
+    "sourceMap": true
+  },
+  "filesGlob": ["src/**/*.ts"],
+  "exclude": ["node_modules"]
+}
