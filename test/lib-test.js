@@ -37,3 +37,13 @@ exports.testUdpNodeNew = function (test) {
   comm.comm_udp_node_destroy(ptr);
   test.done();
 };
+
+exports.testNetworkNew = function (test) {
+  const routerAddress = comm.comm_address_for_content('alpha');
+  const router = comm.comm_udp_node_new(routerAddress, '127.0.0.1:6667');
+  const routers = lib.comm_udp_node_ptr_array([router]);
+  const address = comm.comm_address_for_content('beta');
+  const network = comm.comm_network_new(address, "127.0.0.1:6668", routers, 1);
+  comm.comm_network_destroy(network);
+  return test.done();
+};
