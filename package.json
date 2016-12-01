@@ -4,6 +4,7 @@
   "description": "A Node.js wrapper for Comm",
   "main": "artifacts/index.js",
   "scripts": {
+    "prebuild": "pushd lib/c_api && cargo build && popd",
     "build": "tsc -p .",
     "test": "nodeunit test/*.js"
   },
