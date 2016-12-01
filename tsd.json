@@ -9,13 +9,13 @@
       "commit": "a11d013885ea072e6dba017ec5181eaf1ee152db"
     },
     "node-ffi/node-ffi-buffer.d.ts": {
-      "commit": "a11d013885ea072e6dba017ec5181eaf1ee152db"
+      "commit": "f9351fd6d2154b3822444c54e687f1b102827eac"
     },
     "node/node.d.ts": {
       "commit": "a11d013885ea072e6dba017ec5181eaf1ee152db"
     },
     "ref/ref.d.ts": {
-      "commit": "a11d013885ea072e6dba017ec5181eaf1ee152db"
+      "commit": "f9351fd6d2154b3822444c54e687f1b102827eac"
     },
     "ref-struct/ref-struct.d.ts": {
       "commit": "a11d013885ea072e6dba017ec5181eaf1ee152db"

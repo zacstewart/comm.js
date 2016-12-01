@@ -1,14 +1,20 @@
 import * as ref from 'ref';
 import * as ffi from 'ffi';
 
-var libcomm = ffi.Library('lib/c_api/target/debug/libcomm', {
+const comm_udp_node_ptr = ref.refType(ref.types.void);
+
+const libcomm = ffi.Library('lib/c_api/target/debug/libcomm', {
   'comm_initialize': ['void', []],
+
   'comm_address_for_content': ['pointer', ['string']],
   'comm_address_from_str': ['pointer', ['string']],
   'comm_address_null': ['pointer', []],
   'comm_address_copy': ['pointer', ['pointer']],
   'comm_address_to_str': ['string', ['pointer']],
   'comm_address_destroy': ['void', ['pointer']],
+
+  'comm_udp_node_new': [comm_udp_node_ptr, ['pointer', 'string']],
+  'comm_udp_node_destroy': ['void', [comm_udp_node_ptr]],
 });
 
 class Address {
