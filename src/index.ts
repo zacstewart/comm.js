@@ -2,6 +2,7 @@ import * as ref from 'ref';
 import * as ffi from 'ffi';
 import * as ArrayType from 'ref-array';
 import Address from './address';
+import UdpNode from './udp-node';
 
 const comm_udp_node_ptr = ref.refType(ref.types.void);
 const comm_udp_node_ptr_array = ArrayType(comm_udp_node_ptr);
@@ -44,5 +45,6 @@ libcomm.comm_initialize();
 export default libcomm;
 export {
   comm_udp_node_ptr_array,
-  Address
+  Address,
+  UdpNode
 };
