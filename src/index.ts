@@ -24,7 +24,10 @@ const libcomm = ffi.Library('lib/c_api/target/debug/libcomm', {
     comm_udp_node_ptr_array,
     ref.types.size_t
   ]],
+  'comm_network_run': ['pointer', ['pointer']],
   'comm_network_destroy': ['void', ['pointer']],
+  'comm_network_register_shutdown_callback': ['void', ['pointer', 'pointer']],
+  'comm_network_commands_shutdown': ['void', ['pointer']],
 });
 
 class Address {
