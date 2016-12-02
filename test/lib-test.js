@@ -1,6 +1,6 @@
 const ffi = require('ffi');
 const lib = require("../");
-const comm = lib.libcomm;
+const comm = lib.default;
 
 exports.testAddressForContent = function (test) {
   const ptr = comm.comm_address_for_content('test');
