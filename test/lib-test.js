@@ -67,3 +67,33 @@ exports.testNetworkRun = function (test) {
   // nodeunit won't wait for done unless there is a timer running
   setTimeout(function () {}, 2000);
 };
+
+exports.testClientNew = function (test) {
+  const address = comm.comm_address_for_content('test');
+  const client = comm.comm_client_new(address);
+  comm.comm_client_destroy(client);
+  test.done();
+};
+
+exports.testClientRun = function (test) {
+  const routerAddress = comm.comm_address_for_content('alpha');
+  const router = comm.comm_udp_node_new(
+    routerAddress, '127.0.0.1:6667');
+  const routers = lib.comm_udp_node_ptr_array([router]);
+  const address = comm.comm_address_for_content('beta');
+  const network = comm.comm_network_new(
+    address, "127.0.0.1:6668", routers, 1);
+  const client = comm.comm_client_new(
+    comm.comm_address_copy(address));
+  const callback = ffi.Callback('void', ['void'], function () {
+    test.ok(true);
+    test.done();
+  });
+  comm.comm_client_register_shutdown_callback(client, callback);
+
+  const commands = comm.comm_client_run(client, network);
+  comm.comm_client_commands_shutdown(commands);
+
+  // nodeunit won't wait for done unless there is a timer running
+  setTimeout(function () {}, 2000);
+};
