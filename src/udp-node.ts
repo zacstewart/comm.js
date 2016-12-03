@@ -13,6 +13,12 @@ class UdpNode {
     return new UdpNode(pointer);
   }
 
+  public consume(): any {
+    const pointer = this.pointer;
+    this.pointer = null
+    return pointer;
+  }
+
   public destroy(): void {
     libcomm.comm_udp_node_destroy(this.pointer);
     this.pointer = null;
